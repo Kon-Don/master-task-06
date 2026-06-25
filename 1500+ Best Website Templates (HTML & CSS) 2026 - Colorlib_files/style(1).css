@@ -1,0 +1,548 @@
+/*
+Theme Name: Colorlib Child c67
+Theme URI: https://colorlib.com
+Description: Colorlib WordPress theme example child theme.
+Author: Aigars Silkalns
+Author URI: https://colorlib.com
+Template: c67
+Version: c67
+*/
+.nectar-button{border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;transition:opacity .3s linear;-moz-transition:opacity .3s linear;-webkit-transition:opacity .3s linear;-o-transition:opacity .3s linear;color:#fff!important;font-size:12px;letter-spacing:2px;padding:13px 18px;position:relative;text-transform:uppercase;top:-3px;margin-bottom:10px;opacity:.75;line-height:20px;background-color:#27cfc3;display:inline-block}.nectar-button.small{border-radius:2px;font-size:9px;padding:5px 8px;letter-spacing:1.3px;color:#fff!important}.nectar-button.medium{border-radius:3px;padding:10px 15px;font-size:12px;letter-spacing:2px;color:#fff!important}.nectar-button.large{font-size:13px;padding:15px 22px}.full-width-section .light .nectar-button:hover,.nectar-button:hover{opacity:1}.full-width-section .light .nectar-button{opacity:.9}.nectar-button.extra-color-1{background-color:#f6653c!important}.nectar-button.extra-color-2{background-color:#2ac4ea!important}.nectar-button.extra-color-3{background-color:#333!important}.accent-color{background-color:#77cc6d}.aff-disclosure{background:#f7f7f7;padding:20px;font-style:italic;margin-bottom:50px;border:1px solid #e4e4e4}#site-header #site-logo a{width:180px}
+
+/* Template Card Styles - for blog article template listings */
+.template-card{margin:16px 0 28px}
+.template-card__meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.template-card__badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:6px;font-size:13px;font-weight:600;line-height:1.5}
+.template-card__badge--stack{background:#f0f4ff;color:#3b5bdb}
+.template-card__badge--best-for{background:#f0fdf4;color:#166534}
+.template-card__badge--price-free{background:#ecfdf5;color:#059669}
+.template-card__badge--price-paid{background:#fef3c7;color:#92400e}
+.template-card__highlight{font-size:15px;color:#374151;line-height:1.65;margin-bottom:0;padding:14px 18px;background:#f8fafc;border-radius:8px;border-left:3px solid #1a73e8}
+.template-card__highlight strong{color:#1a73e8;font-weight:700}
+.editors-pick{background:#f0f4ff;border-left:3px solid #1a73e8;border-radius:0 8px 8px 0;padding:16px 20px;margin:12px 0 24px;font-size:15px;color:#374151;line-height:1.7}
+.editors-pick strong{color:#1a73e8}
+.quick-picks{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:24px 28px;margin:24px 0 40px}
+.quick-picks__title{font-size:17px;font-weight:800;color:#0f1d32;margin-bottom:16px}
+.quick-picks__list{list-style:none;padding:0;margin:0;display:grid;gap:0}
+.quick-picks__item{padding:10px 0;border-bottom:1px solid #eef1f5;font-size:14px;color:#4b5563;line-height:1.6}
+.quick-picks__item:last-child{border-bottom:none;padding-bottom:0}
+.quick-picks__item strong{color:#0f1d32;font-size:13px;letter-spacing:0.01em}
+.quick-picks__item a{font-weight:600;text-decoration:none}
+
+/* ==========================================================================
+   Templates Hub — scoped styles for page_id=133377 (/wp/templates/).
+   v1.2 — sticky sidebar + accordion FAQ + editor's picks + related block.
+   ========================================================================== */
+
+.templates-hub {
+	max-width: 1360px;
+	margin: 0 auto;
+	padding: 0 24px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+	color: #1f2937;
+	--hub-border: #e5e7eb;
+	--hub-muted: #6b7280;
+	--hub-accent: #1a73e8;
+	--hub-accent-dark: #1557b8;
+	--hub-bg-soft: #f8fafc;
+}
+
+/* Hero ------------------------------------------------------------------- */
+
+.templates-hub__hero {
+	text-align: center;
+	padding: 40px 0 32px;
+	border-bottom: 1px solid var(--hub-border);
+	margin-bottom: 40px;
+}
+
+.templates-hub__title {
+	font-size: clamp(30px, 5vw, 48px);
+	font-weight: 700;
+	line-height: 1.15;
+	margin: 0 0 10px;
+	letter-spacing: -0.02em;
+}
+
+.templates-hub__byline {
+	font-size: 13px;
+	color: var(--hub-muted);
+	margin: 0 0 18px;
+	letter-spacing: 0.01em;
+}
+
+.templates-hub__byline strong {
+	color: #374151;
+	font-weight: 600;
+}
+
+.templates-hub__lead {
+	font-size: clamp(16px, 2vw, 19px);
+	line-height: 1.55;
+	max-width: 720px;
+	margin: 0 auto 24px;
+	color: #4b5563;
+}
+
+.templates-hub__filter {
+	display: flex;
+	max-width: 560px;
+	margin: 0 auto;
+	border: 1px solid #d1d5db;
+	border-radius: 10px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.templates-hub__filter input[type="search"] {
+	flex: 1;
+	padding: 14px 18px;
+	border: 0;
+	font-size: 16px;
+	outline: none;
+	background: transparent;
+}
+
+/* Hide placeholder text on focus (default browser behaviour keeps it visible). */
+.templates-hub__filter input[type="search"]:focus::placeholder { color: transparent; }
+.templates-hub__filter input[type="search"]:focus::-webkit-input-placeholder { color: transparent; }
+.templates-hub__filter input[type="search"]:focus::-moz-placeholder { color: transparent; }
+.templates-hub__filter input[type="search"]:focus:-ms-input-placeholder { color: transparent; }
+
+.templates-hub__filter button {
+	padding: 0 24px;
+	border: 0;
+	background: var(--hub-accent);
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.15s ease;
+}
+
+.templates-hub__filter button:hover,
+.templates-hub__filter button:focus {
+	background: var(--hub-accent-dark);
+}
+
+/* Two-column layout ------------------------------------------------------ */
+
+.templates-hub__layout {
+	display: grid;
+	grid-template-columns: 200px minmax(0, 1fr);
+	gap: 32px;
+	align-items: start;
+}
+
+.templates-hub__main { min-width: 0; }
+
+/* Sidebar ---------------------------------------------------------------- */
+
+.templates-hub__sidebar {
+	position: sticky;
+	top: 80px;
+	max-height: calc(100vh - 100px);
+}
+
+.templates-hub__sidebar-inner {
+	max-height: calc(100vh - 100px);
+	overflow-y: auto;
+	padding-right: 8px;
+	scrollbar-width: thin;
+}
+
+.templates-hub__group {
+	border-bottom: 1px solid var(--hub-border);
+	padding: 6px 0;
+}
+
+.templates-hub__group > summary {
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #374151;
+	padding: 10px 0;
+	list-style: none;
+	position: relative;
+	user-select: none;
+}
+
+.templates-hub__group > summary::-webkit-details-marker { display: none; }
+
+.templates-hub__group > summary::after {
+	content: "+";
+	position: absolute;
+	right: 4px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 18px;
+	font-weight: 400;
+	color: var(--hub-muted);
+}
+.templates-hub__group[open] > summary::after { content: "−"; }
+
+.templates-hub__group ul {
+	list-style: none;
+	margin: 4px 0 10px;
+	padding: 0;
+}
+
+.templates-hub__group a {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 8px 5px 4px;
+	font-size: 13px;
+	color: #374151;
+	text-decoration: none;
+	border-radius: 6px;
+	transition: background 0.1s ease, color 0.1s ease;
+	line-height: 1.35;
+}
+.templates-hub__group a:hover,
+.templates-hub__group a:focus {
+	background: var(--hub-bg-soft);
+	color: var(--hub-accent);
+}
+
+.templates-hub__cat-name { flex: 1; margin-right: 8px; }
+
+.templates-hub__cat-count {
+	font-size: 12px;
+	color: #9ca3af;
+	font-variant-numeric: tabular-nums;
+}
+
+/* Main content sections -------------------------------------------------- */
+
+.templates-hub__section { margin: 0 0 56px; }
+
+.templates-hub__section h2 {
+	font-size: clamp(22px, 3vw, 30px);
+	font-weight: 700;
+	margin: 0 0 6px;
+	letter-spacing: -0.01em;
+}
+
+.templates-hub__section-lead {
+	font-size: 15px;
+	color: var(--hub-muted);
+	margin: 0 0 22px;
+}
+
+/* Template card grid ----------------------------------------------------- */
+
+.templates-hub__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 24px;
+}
+
+.templates-hub__card {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	border-radius: 10px;
+	overflow: hidden;
+	background: #fff;
+	border: 1px solid var(--hub-border);
+	transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.templates-hub__card:hover,
+.templates-hub__card:focus {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.12);
+	border-color: #c7d2fe;
+}
+
+.templates-hub__card img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	background: #f3f4f6;
+}
+
+.templates-hub__card h3 {
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0;
+	padding: 14px 16px;
+	line-height: 1.3;
+}
+
+/* Editor's Picks --------------------------------------------------------- */
+
+.templates-hub__picks {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 16px;
+}
+
+.templates-hub__pick {
+	display: block;
+	padding: 20px 22px;
+	border-radius: 10px;
+	background: linear-gradient(135deg, #f0f4ff 0%, #fafbfc 100%);
+	border: 1px solid #e0e7ff;
+	text-decoration: none;
+	color: inherit;
+	transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.templates-hub__pick:hover,
+.templates-hub__pick:focus {
+	border-color: var(--hub-accent);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 24px -10px rgba(26, 115, 232, 0.18);
+}
+
+.templates-hub__pick h3 {
+	font-size: 17px;
+	font-weight: 600;
+	margin: 0 0 6px;
+	color: #111827;
+}
+
+.templates-hub__pick p {
+	font-size: 14px;
+	line-height: 1.5;
+	color: #4b5563;
+	margin: 0;
+}
+
+/* Pagination ------------------------------------------------------------- */
+
+.templates-hub__pagination {
+	margin: 36px 0 0;
+	display: flex;
+	justify-content: center;
+}
+
+.templates-hub__pagination .page-numbers {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.templates-hub__pagination .page-numbers li { margin: 0; }
+
+.templates-hub__pagination a,
+.templates-hub__pagination span {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 40px;
+	padding: 8px 14px;
+	border: 1px solid var(--hub-border);
+	border-radius: 8px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #374151;
+	text-decoration: none;
+	background: #fff;
+	transition: background 0.1s ease, border-color 0.1s ease, color 0.1s ease;
+}
+
+.templates-hub__pagination a:hover,
+.templates-hub__pagination a:focus {
+	background: var(--hub-bg-soft);
+	border-color: var(--hub-accent);
+	color: var(--hub-accent);
+}
+
+.templates-hub__pagination .current {
+	background: var(--hub-accent);
+	border-color: var(--hub-accent);
+	color: #fff;
+}
+
+.templates-hub__pagination .dots {
+	border: 0;
+	background: transparent;
+	color: var(--hub-muted);
+}
+
+/* Prose section ---------------------------------------------------------- */
+
+.templates-hub__section--prose p,
+.templates-hub__section--prose li {
+	font-size: 16px;
+	line-height: 1.65;
+	color: #374151;
+}
+
+.templates-hub__section--prose h3 {
+	font-size: 19px;
+	font-weight: 600;
+	margin: 28px 0 10px;
+	color: #111827;
+}
+
+.templates-hub__section--prose ul {
+	padding-left: 20px;
+	margin: 16px 0;
+}
+.templates-hub__section--prose li { margin-bottom: 8px; }
+
+.templates-hub__section--prose a,
+.templates-hub__faq-answer a {
+	color: var(--hub-accent);
+	text-decoration: underline;
+	text-decoration-color: rgba(26, 115, 232, 0.4);
+	text-underline-offset: 2px;
+}
+.templates-hub__section--prose a:hover,
+.templates-hub__faq-answer a:hover {
+	text-decoration-color: currentColor;
+}
+
+/* FAQ accordion ---------------------------------------------------------- */
+
+.templates-hub__faq-list {
+	border-top: 1px solid var(--hub-border);
+	max-width: 840px;
+}
+
+.templates-hub__faq-item {
+	border-bottom: 1px solid var(--hub-border);
+}
+
+.templates-hub__faq-item > summary {
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 17px;
+	color: #111827;
+	padding: 18px 40px 18px 0;
+	position: relative;
+	list-style: none;
+	user-select: none;
+	transition: color 0.15s ease;
+}
+.templates-hub__faq-item > summary:hover { color: var(--hub-accent); }
+.templates-hub__faq-item > summary::-webkit-details-marker { display: none; }
+
+.templates-hub__faq-item > summary::after {
+	content: "+";
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 24px;
+	font-weight: 300;
+	color: var(--hub-muted);
+	line-height: 1;
+}
+.templates-hub__faq-item[open] > summary::after {
+	content: "−";
+	color: var(--hub-accent);
+}
+
+.templates-hub__faq-answer {
+	font-size: 16px;
+	line-height: 1.65;
+	color: #4b5563;
+	padding: 0 24px 20px 0;
+}
+
+/* Related collections ---------------------------------------------------- */
+
+.templates-hub__related {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	gap: 16px;
+}
+
+.templates-hub__related a {
+	display: block;
+	padding: 20px 22px;
+	background: #fff;
+	border: 1px solid var(--hub-border);
+	border-radius: 10px;
+	text-decoration: none;
+	color: inherit;
+	transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.templates-hub__related a:hover,
+.templates-hub__related a:focus {
+	border-color: var(--hub-accent);
+	transform: translateY(-2px);
+}
+
+.templates-hub__related h3 {
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0 0 4px;
+	color: #111827;
+}
+
+.templates-hub__related p {
+	font-size: 14px;
+	line-height: 1.5;
+	color: #4b5563;
+	margin: 0;
+}
+
+/* Responsive breakpoints ------------------------------------------------- */
+
+@media (max-width: 1100px) {
+	.templates-hub__layout {
+		grid-template-columns: 180px minmax(0, 1fr);
+		gap: 24px;
+	}
+	.templates-hub__grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 16px;
+	}
+	.templates-hub__card h3 {
+		font-size: 14px;
+		padding: 10px 12px;
+	}
+}
+
+@media (max-width: 860px) {
+	.templates-hub { padding: 0 16px; }
+	.templates-hub__hero {
+		padding: 28px 0 24px;
+		margin-bottom: 28px;
+	}
+	.templates-hub__layout {
+		grid-template-columns: 1fr;
+		gap: 0;
+	}
+	.templates-hub__sidebar {
+		position: static;
+		max-height: none;
+		margin-bottom: 36px;
+		padding: 16px 18px;
+		background: var(--hub-bg-soft);
+		border-radius: 12px;
+	}
+	.templates-hub__sidebar-inner {
+		max-height: none;
+		overflow: visible;
+		padding-right: 0;
+	}
+	.templates-hub__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 12px;
+	}
+	.templates-hub__card h3 {
+		font-size: 13px;
+		padding: 9px 11px;
+	}
+	.templates-hub__picks { grid-template-columns: 1fr; gap: 12px; }
+	.templates-hub__related { grid-template-columns: 1fr; gap: 12px; }
+}
+
+/* Very small screens: single column */
+@media (max-width: 480px) {
+	.templates-hub__grid {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+}
